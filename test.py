@@ -10,6 +10,24 @@ d1 = {
     "phone-number": "9559277726",
     "age": "21"
 }
+d = {
+    "username": "Anshit",
+    "phone-number": "9559277726",
+    "age": "21"
+}
+d2 = {
+    "username": "Anshit",
+    "phone-number": "9559277726",
+    "age": "21"
+}
+d3 = {
+    "username": "Anshit",
+    "phone-number": "9559277726",
+    "age": "21"
+}
+
+
+
 db1 = client['mongo']
 coll = db1['test']
 coll.insert_one(d1)
