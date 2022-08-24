@@ -1,11 +1,7 @@
 import pymongo
-
-
 client = pymongo.MongoClient('mongodb+srv://Amanjain12:Amanjain12@anshit.5aeevdi.mongodb.net/?retryWrites=true&w=majority')
 db = client.test
-
-print(db)
-data =  [
+"""data =[
         {
             "item": "canvas",
             "qty": 100,
@@ -67,8 +63,14 @@ data =  [
             "status": "A",
         },
     ]
+"""
 
-
-db1 = client['mongo']
-coll = db1['test']
-coll.insert_many(data)
+db1 = client['database1']
+coll = db1['table']
+#coll.insert_many(data)
+#records=coll.find({'item':'mousepad','qty':{"$gte": 25}})
+#records=coll.find({'$or':[{'item':'mousepad'},{'qty':{"$gte": 25}}]})
+coll.update_many({'item':'mat'}, {'$set': {'item':'something'}})
+records=coll.find({'item':'something'})
+for i in records:
+    print(i)
